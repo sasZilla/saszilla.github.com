@@ -1,6 +1,6 @@
 ---
 layout: post
-category : blog
+category : lessons
 tags : [javascript, begginer]
 ---
 {% include JB/setup %}
