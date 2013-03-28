@@ -24,7 +24,7 @@
 
 
 		L.marker([59.959232, 30.319849]).addTo(map)
-			.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+			.bindPopup("<b>Hello DrWeb!</b>").openPopup();
 
 
 		var popup = L.popup();
