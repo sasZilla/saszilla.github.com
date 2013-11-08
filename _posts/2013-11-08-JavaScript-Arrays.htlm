@@ -34,20 +34,30 @@ pop() Удаляет последний элемени из массива, во
 </li>
 <li>
 push() Добавляет новый элемент в конец массива, возвращает новую длинну массива.
+</li>
+<li>
 reverse() Изменяет массив, меняет порядок элементов в массиве.
+</li>
+<li>
 shift() Удаляет первый элемент в массиве, возвращает элемент.
+</li>
+<li>
 slice()	Выбирает элементы из массива, возвращает новый массив
 <code>
 var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
 var citrus = fruits.slice(1,3);
 // ["Orange", "Lemon"]
 </code>
+</li>
+<li>
 sort() Сортирует элементы массива	
 <code>
 var points = [40,100,1,5,25,10];
 points.sort(function(a,b){return a-b});
 //[1, 5, 10, 25, 40, 100]
 </code>
+</li>
+<li>
 splice() Добавляет/Удаляет элементы из массива
 <code>
 // array.splice(index,howmany,item1,.....,itemX)
@@ -60,6 +70,14 @@ fruits.splice(2,1,"Lemon","Kiwi");
 
 // ["Banana","Orange","Lemon","Kiwi","Mango"]
 </code>
+</li>
+<li>
 toString() Конвертирует массив в строку и возвращает результат
+</li>
+<li>
 unshift()	Добаляет элемент в начало массива и возвращает новую длинну
+</li>
+<li>
 valueOf()	Возвращает примитивное значение
+</li>
+</ul>
