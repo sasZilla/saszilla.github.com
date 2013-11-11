@@ -34,14 +34,16 @@ date : 11.11.2013
 
 <h3>Функция наследования объектов</h3>
 <pre>
-  function inherit(proto) {
-    function F() {};
-    F.prototype = proto;
-    return new F;
+  if (!Object.create) {
+    Object.create = function(proto) {
+      function F() {}
+      F.prototype = proto;
+      return new F;
+    };
   }
   
   var animal = {eats: true};
-  var rabbit = inherit(animal);
+  var rabbit = Object.create(animal);
   rabbit.eats; // true
 </pre>
 
