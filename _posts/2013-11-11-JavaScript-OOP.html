@@ -44,3 +44,34 @@ date : 11.11.2013
   var rabbit = inherit(animal);
   rabbit.eats; // true
 </pre>
+
+<h3>Наследование для Классов</h3>
+<pre>
+ function Animal(name) {
+    this.name = name;
+  }
+  
+  Animal.prototype.run = function(speed) {
+    this.speed += speed;
+  }
+  
+  Animal.prototype.speed = 0;
+  
+  function Rabbit(name) {
+    Animal.apply(this, arguments);
+  }
+  
+  Rabbit.prototype = Object.create(Animal.prototype);
+  
+  Rabbit.prototype.jumps = 0;
+  
+  Rabbit.prototype.run = function(speed) {
+    Animal.prototype.run.apply(this, arguments);
+    this.jumps++;
+  }
+  
+  var rabbit = new Rabbit("Bilbo");
+  
+  rabbit.run(3); // rabbit.speed === 3, rabbit.jumps === 1;
+</pre>
+
