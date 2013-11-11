@@ -1,0 +1,46 @@
+---
+layout: post
+title: ООП в javascript
+tags: [JavaScript, web]
+date : 11.11.2013
+---
+
+<h3>Наследование через __proto__</h3>
+<p>
+У объекта в JS есть скрытое свойство __proto__, через которое можно получить доступ до родительского объекта.
+<pre>
+  var o = {foo: "bar"};
+  var newO = {title: "Test"};
+  
+  newO.__proto__ = o;
+  
+  newO.foo === "bar" // true
+</pre>
+</p>
+
+<h3>Наследование через prototype</h3>
+<p>
+При создании функции, мы можем воспользоваться объектом prototype. П
+<pre>
+  var foo = function(name) {
+    this.name = name;
+  };
+  foo.prototype.bar = function(){ return this.name };
+  
+  var fooBar = new foo("fooBar");
+  // foo {name: "fooBar", bar: function}
+</pre>
+</p>
+
+<h3>Функция наследования объектов</h3>
+<pre>
+  function inherit(proto) {
+    function F() {};
+    F.prototype = proto;
+    return new F;
+  }
+  
+  var animal = {eats: true};
+  var rabbit = inherit(animal);
+  rabbit.eats; // true
+</pre>
